@@ -1,0 +1,934 @@
+/* ============================================================
+   SKILLCOMPASS · JOB PROFILES / CAREER DIRECTIONS
+   Minimum visible text size: 14px.
+   ============================================================ */
+
+.job-profiles-page {
+  --jp-text: #f7fbff;
+  --jp-text-soft: #d3e6ff;
+  --jp-text-bright: #ffffff;
+  --jp-blue: #69b9ff;
+  --jp-cyan: #61e9f5;
+  --jp-purple: #b79aff;
+  --jp-mint: #66e4b3;
+  --jp-rose: #ff98b1;
+  --jp-panel: linear-gradient(145deg, rgba(18, 46, 89, .94), rgba(7, 23, 48, .985));
+  --jp-panel-deep: linear-gradient(145deg, rgba(7, 23, 47, .96), rgba(8, 18, 38, .99));
+  --jp-border: rgba(123, 192, 255, .18);
+  --jp-border-strong: rgba(130, 208, 255, .36);
+  --jp-shadow: 0 25px 60px rgba(0, 0, 0, .30);
+  width: 100%;
+  min-width: 0;
+  padding: 18px 0 56px;
+  color: var(--jp-text);
+  font-size: 15px;
+  overflow-x: hidden;
+  animation: jp-page-enter .4s ease both;
+}
+
+.job-profiles-page * { box-sizing: border-box; }
+.job-profiles-page button,
+.job-profiles-page input { font: inherit; }
+
+@keyframes jp-page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes jp-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes jp-orbit-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes jp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes jp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(97, 233, 245, .08), 0 26px 45px rgba(24, 118, 193, .28); }
+  50% { box-shadow: 0 0 0 13px rgba(97, 233, 245, 0), 0 30px 58px rgba(24, 118, 193, .36); }
+}
+
+/* HERO */
+.jp-hero {
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, .6fr);
+  gap: 24px;
+  align-items: center;
+  padding: 30px 38px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 82% 30%, rgba(70, 177, 255, .18), transparent 28%),
+    radial-gradient(circle at 68% 88%, rgba(183, 154, 255, .12), transparent 26%),
+    linear-gradient(145deg, rgba(9, 26, 54, .70), rgba(7, 17, 36, .37));
+  border: 1px solid rgba(110, 184, 255, .12);
+}
+
+.jp-hero::before,
+.jp-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.jp-hero::before {
+  width: 520px;
+  height: 520px;
+  right: -210px;
+  top: -260px;
+  background: radial-gradient(circle, rgba(56, 147, 255, .12), transparent 68%);
+}
+.jp-hero::after {
+  width: 360px;
+  height: 360px;
+  left: 33%;
+  bottom: -280px;
+  background: radial-gradient(circle, rgba(176, 136, 255, .10), transparent 67%);
+}
+
+.jp-hero-copy { position: relative; z-index: 2; max-width: 820px; }
+.jp-hero-labels { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.jp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #7fe4ff;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.jp-scope-pill,
+.jp-detail-domain,
+.jp-mini-pill,
+.jp-count-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 850;
+}
+.jp-scope-pill {
+  min-height: 35px;
+  padding: 8px 12px;
+  color: #d9cdff;
+  background: rgba(155, 120, 255, .11);
+  border: 1px solid rgba(178, 148, 255, .22);
+}
+.jp-hero h1 {
+  max-width: 800px;
+  margin: 14px 0 13px;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  color: #f7fbff;
+  text-shadow: 0 15px 38px rgba(31, 120, 201, .16);
+}
+.jp-hero p {
+  max-width: 760px;
+  margin: 0;
+  color: #cae1ff;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.jp-hero-visual,
+.jp-compass {
+  position: relative;
+  min-height: 250px;
+}
+.jp-hero-visual { display: grid; place-items: center; animation: jp-float 5.2s ease-in-out infinite; }
+.jp-hero-glow { position: absolute; border-radius: 50%; filter: blur(10px); }
+.jp-hero-glow.glow-one { width: 220px; height: 220px; background: rgba(65, 175, 255, .13); }
+.jp-hero-glow.glow-two { width: 165px; height: 165px; background: rgba(173, 131, 255, .13); transform: translate(70px, 50px); }
+.jp-compass { width: 290px; height: 250px; }
+.jp-compass::before,
+.jp-compass::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(105, 189, 255, .25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.jp-compass::before { width: 184px; height: 184px; animation: jp-orbit 14s linear infinite; }
+.jp-compass::after { width: 276px; height: 126px; border-color: rgba(185, 149, 255, .22); transform: translate(-50%, -50%) rotate(-22deg); animation: jp-orbit-reverse 17s linear infinite; }
+.jp-compass-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border-radius: 28px;
+  color: #fff;
+  background: linear-gradient(145deg, #8fe7ff 0%, #3a9dff 45%, #7650df 100%);
+  border: 1px solid rgba(228, 250, 255, .31);
+  box-shadow: inset 3px 3px 6px rgba(255,255,255,.24), inset -7px -8px 12px rgba(27, 38, 104, .28), 0 28px 45px rgba(24, 102, 183, .33);
+  animation: jp-pulse 4.4s ease-in-out infinite;
+}
+.jp-compass-label {
+  position: absolute;
+  z-index: 2;
+  padding: 9px 12px;
+  border-radius: 13px;
+  background: rgba(7, 22, 44, .86);
+  border: 1px solid rgba(120, 184, 245, .19);
+  box-shadow: 0 13px 24px rgba(0,0,0,.24), inset 1px 1px 2px rgba(255,255,255,.05);
+  backdrop-filter: blur(9px);
+  font-size: 15px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.jp-compass-label.label-one { left: 1px; top: 25px; color: var(--jp-cyan); }
+.jp-compass-label.label-two { right: -4px; top: 67px; color: #d2c2ff; }
+.jp-compass-label.label-three { left: 18px; bottom: 34px; color: var(--jp-mint); }
+.jp-compass-label.label-four { right: 20px; bottom: 14px; color: #9dd1ff; }
+
+/* SEARCH */
+.jp-search-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: 14px;
+  margin-top: 18px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(14, 39, 76, .92), rgba(7, 22, 45, .98));
+  border: 1px solid var(--jp-border);
+  box-shadow: var(--jp-shadow), inset 2px 2px 5px rgba(255,255,255,.045), inset -5px -6px 12px rgba(0,0,0,.25);
+}
+.jp-search-field {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 0 18px;
+  border-radius: 19px;
+  background: var(--jp-panel-deep);
+  border: 1px solid rgba(119, 190, 255, .21);
+  color: #73ddff;
+  box-shadow: inset 4px 4px 8px rgba(0,0,0,.30), inset -2px -2px 4px rgba(255,255,255,.024);
+}
+.jp-search-field input { min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: #fff; font-size: 16px; line-height: 1.45; }
+.jp-search-field input::placeholder { color: #c0d9f7; opacity: 1; }
+.jp-clear {
+  border: 1px solid rgba(116, 184, 243, .20);
+  border-radius: 11px;
+  padding: 9px 13px;
+  color: #d5e9ff;
+  background: rgba(68, 137, 214, .12);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 850;
+}
+.jp-clear:hover { color: #fff; background: rgba(69, 153, 236, .23); }
+.jp-domain-row { display: flex; align-items: stretch; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 540px; }
+.jp-domain-filter {
+  border: 1px solid rgba(111, 175, 239, .19);
+  border-radius: 14px;
+  padding: 11px 14px;
+  color: #c9def8;
+  background: rgba(20, 49, 93, .76);
+  font-size: 15px;
+  font-weight: 850;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.jp-domain-filter:hover { transform: translateY(-2px); color: #fff; border-color: rgba(124, 199, 255, .35); }
+.jp-domain-filter.active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(54, 143, 255, .43), rgba(128, 82, 238, .36));
+  border-color: var(--jp-border-strong);
+  box-shadow: 0 12px 23px rgba(33, 91, 171, .21), inset 1px 1px 2px rgba(255,255,255,.10);
+}
+
+/* SECTIONS */
+.jp-section { margin-top: 34px; }
+.jp-section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; margin-bottom: 18px; padding: 0 3px; }
+.jp-section-kicker { display: block; color: #7ed3ff; font-size: 15px; line-height: 1.25; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.jp-section-head h2,
+.jp-card-head h2 { margin: 7px 0 5px; color: #f8fbff; font-size: 29px; line-height: 1.15; letter-spacing: -.025em; }
+.jp-section-head p { margin: 0; max-width: 790px; color: #c5dbf7; font-size: 15px; line-height: 1.6; }
+.jp-count-pill { gap: 6px; padding: 10px 14px; color: #cfe4ff; background: rgba(21, 50, 95, .70); border: 1px solid rgba(116, 179, 241, .19); }
+.jp-count-pill strong { color: #fff; font-size: 16px; }
+.jp-data-notice { margin: -5px 0 14px; padding: 12px 14px; border-radius: 14px; color: #cfe4ff; background: rgba(38, 94, 165, .12); border: 1px solid rgba(107, 177, 249, .17); font-size: 15px; line-height: 1.45; }
+
+/* ROLE CARDS */
+.jp-role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.jp-role-card {
+  min-width: 0;
+  min-height: 475px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 21px;
+  border-radius: 27px;
+  border: 1px solid rgba(114, 181, 247, .17);
+  background: var(--jp-panel);
+  color: inherit;
+  cursor: pointer;
+  box-shadow: 0 23px 42px rgba(0,0,0,.26), inset 2px 2px 4px rgba(255,255,255,.045), inset -6px -7px 12px rgba(0,0,0,.22);
+  transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+.jp-role-card::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -75px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(73, 187, 255, .16), transparent 70%);
+  pointer-events: none;
+}
+.jp-role-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(122, 202, 255, .33);
+  box-shadow: 0 31px 54px rgba(0,0,0,.31), inset 2px 2px 5px rgba(255,255,255,.055), inset -6px -7px 13px rgba(0,0,0,.22);
+}
+.jp-role-card.featured { background: linear-gradient(145deg, rgba(24, 62, 118, .98), rgba(8, 28, 58, .99)); border-color: rgba(94, 193, 255, .28); }
+.jp-role-top { position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.jp-role-mark {
+  width: 57px;
+  height: 57px;
+  flex: 0 0 57px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 950;
+  letter-spacing: .05em;
+  border: 1px solid rgba(228, 249, 255, .18);
+  box-shadow: inset 2px 2px 3px rgba(255,255,255,.14), inset -4px -5px 7px rgba(0,0,0,.20), 0 13px 24px rgba(0,0,0,.20);
+}
+.jp-role-mark-blue { background: linear-gradient(145deg, #5dbaff, #2669d7); }
+.jp-role-mark-mint { background: linear-gradient(145deg, #67e5b3, #149f91); }
+.jp-role-mark-purple { background: linear-gradient(145deg, #bf9dff, #7450d8); }
+.jp-role-mark-cyan { background: linear-gradient(145deg, #62e8f5, #2d8bdb); }
+.jp-domain-badge {
+  max-width: 66%;
+  padding: 9px 11px;
+  border-radius: 11px;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 850;
+  border: 1px solid rgba(121, 187, 247, .17);
+  background: rgba(10, 29, 58, .62);
+}
+.jp-domain-blue { color: #92ceff; }
+.jp-domain-mint { color: #86edc2; }
+.jp-domain-purple { color: #cdbdff; }
+.jp-domain-cyan { color: #8af0fa; }
+.jp-role-title-block { position: relative; z-index: 1; margin-top: 18px; }
+.jp-role-title-block h3 { margin: 0; color: #fff; font-size: 24px; line-height: 1.16; letter-spacing: -.025em; }
+.jp-role-title-block span { display: block; margin-top: 6px; color: #bcd5f3; font-size: 15px; line-height: 1.3; }
+.jp-role-description { position: relative; z-index: 1; margin: 13px 0 16px; color: #c9ddf6; font-size: 15px; line-height: 1.65; min-height: 70px; }
+.jp-role-alignment { position: relative; z-index: 1; display: flex; align-items: center; gap: 14px; padding: 13px; border-radius: 18px; background: rgba(7, 24, 49, .50); border: 1px solid rgba(112, 172, 231, .11); }
+.jp-alignment-ring {
+  --ring-degrees: 0deg;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(#5fe4f2 var(--ring-degrees), rgba(55, 95, 144, .28) var(--ring-degrees));
+  box-shadow: 0 10px 24px rgba(24, 101, 167, .20), inset 1px 1px 2px rgba(255,255,255,.08);
+}
+.jp-alignment-ring-inner { width: 61px; height: 61px; display: grid; place-items: center; align-content: center; border-radius: 50%; background: #0a213f; border: 1px solid rgba(109, 181, 255, .15); }
+.jp-alignment-ring strong { color: #fff; font-size: 19px; line-height: 1.05; }
+.jp-alignment-ring span { margin-top: 4px; color: #9fd0f3; font-size: 15px; line-height: 1.1; }
+.jp-direction-copy { min-width: 0; }
+.jp-direction-copy strong { display: block; color: #fff; font-size: 16px; line-height: 1.25; }
+.jp-direction-copy span { display: block; margin-top: 5px; color: #bcd5f2; font-size: 15px; line-height: 1.45; }
+.jp-role-skill-block { position: relative; z-index: 1; margin-top: 13px; }
+.jp-role-skill-block.gap-block { margin-top: 10px; }
+.jp-role-skill-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
+.jp-role-skill-head span { color: #c2d8f2; font-size: 15px; line-height: 1.3; font-weight: 800; }
+.jp-role-skill-head strong { color: #fff; font-size: 15px; }
+.jp-chip-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.jp-chip { display: inline-flex; align-items: center; min-height: 31px; padding: 6px 9px; border-radius: 10px; font-size: 15px; line-height: 1.2; font-weight: 800; border: 1px solid transparent; }
+.jp-chip.matched { color: #83ebbf; background: rgba(52, 190, 139, .09); border-color: rgba(74, 223, 166, .17); }
+.jp-chip.developing { color: #c7b8ff; background: rgba(145, 111, 255, .10); border-color: rgba(170, 143, 255, .18); }
+.jp-chip.gap { color: #ffb0c1; background: rgba(255, 92, 123, .09); border-color: rgba(255, 121, 148, .17); }
+.jp-chip.neutral { color: #c3d9f4; background: rgba(107, 150, 200, .08); border-color: rgba(117, 170, 228, .12); }
+.jp-card-action { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 16px; color: #76dcff; font-size: 15px; line-height: 1.3; font-weight: 900; }
+.jp-card-action svg { transition: transform .2s ease; }
+.jp-role-card:hover .jp-card-action svg { transform: translateX(4px); }
+
+/* LOADING / EMPTY */
+.jp-loading-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.jp-skeleton { min-height: 475px; border-radius: 27px; background: linear-gradient(110deg, rgba(19, 48, 91, .55), rgba(35, 73, 123, .30), rgba(19, 48, 91, .55)); background-size: 200% 100%; animation: jp-shimmer 1.25s linear infinite; border: 1px solid rgba(114, 181, 247, .10); }
+@keyframes jp-shimmer { to { background-position: -200% 0; } }
+.jp-empty { min-height: 270px; display: grid; place-items: center; align-content: center; gap: 8px; padding: 30px; border-radius: 25px; text-align: center; background: var(--jp-panel); border: 1px solid var(--jp-border); }
+.jp-empty-icon { width: 60px; height: 60px; display: grid; place-items: center; border-radius: 18px; color: #71dcff; background: rgba(73, 171, 255, .10); border: 1px solid rgba(111, 194, 255, .16); }
+.jp-empty h1,
+.jp-empty h3 { margin: 7px 0 0; color: #fff; font-size: 25px; line-height: 1.15; }
+.jp-empty p { max-width: 570px; margin: 0 0 8px; color: #c7def7; font-size: 15px; line-height: 1.6; }
+.jp-primary-btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid rgba(126, 215, 255, .28); border-radius: 14px; padding: 12px 16px; color: #fff; background: linear-gradient(135deg, rgba(58, 154, 255, .58), rgba(126, 76, 226, .47)); box-shadow: 0 13px 25px rgba(29, 98, 175, .21), inset 1px 1px 2px rgba(255,255,255,.12); cursor: pointer; font-size: 15px; font-weight: 900; }
+.jp-primary-btn:hover { transform: translateY(-2px); }
+
+/* DETAIL */
+.jp-profile-detail-page { padding-top: 6px; }
+.jp-back { display: inline-flex; align-items: center; gap: 9px; border: 0; padding: 7px 0; color: #8fddff; background: transparent; cursor: pointer; font-size: 15px; line-height: 1.3; font-weight: 850; }
+.jp-back:hover { color: #fff; }
+.jp-detail-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: center; margin-top: 10px; padding: 26px; border-radius: 28px; background: var(--jp-panel-strong, var(--jp-panel)); border: 1px solid var(--jp-border); box-shadow: var(--jp-shadow), inset 2px 2px 5px rgba(255,255,255,.04), inset -6px -7px 13px rgba(0,0,0,.23); }
+.jp-detail-left { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.jp-detail-left > .jp-role-mark { width: 72px; height: 72px; flex-basis: 72px; border-radius: 22px; font-size: 18px; }
+.jp-detail-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.jp-detail-domain { padding: 7px 11px; color: #c6dcfa; background: rgba(16, 44, 83, .66); border: 1px solid rgba(111, 177, 240, .16); }
+.jp-detail-hero h1 { margin: 8px 0 7px; color: #fff; font-size: 38px; line-height: 1.1; letter-spacing: -.035em; }
+.jp-detail-hero p { max-width: 790px; margin: 0; color: #c9e0fa; font-size: 15px; line-height: 1.65; }
+.jp-detail-fit { display: flex; align-items: center; gap: 14px; min-width: 300px; padding: 14px; border-radius: 20px; background: rgba(7, 23, 46, .48); border: 1px solid rgba(112, 177, 238, .12); }
+.jp-detail-fit > div:last-child > span,
+.jp-detail-fit > div:last-child > strong,
+.jp-detail-fit > div:last-child > small { display: block; }
+.jp-detail-fit > div:last-child > span { color: #b9d3ef; font-size: 15px; }
+.jp-detail-fit > div:last-child > strong { margin-top: 4px; color: #fff; font-size: 17px; }
+.jp-detail-fit > div:last-child > small { margin-top: 5px; color: #9fc2e7; font-size: 15px; line-height: 1.4; }
+.jp-stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.jp-stat { min-height: 130px; padding: 17px; border-radius: 20px; background: var(--jp-panel); border: 1px solid rgba(113, 178, 240, .15); box-shadow: 0 17px 31px rgba(0,0,0,.20), inset 2px 2px 4px rgba(255,255,255,.035), inset -5px -6px 9px rgba(0,0,0,.20); }
+.jp-stat span,
+.jp-stat small { display: block; color: #bfd7f3; font-size: 15px; line-height: 1.35; }
+.jp-stat strong { display: block; margin: 7px 0 5px; color: #fff; font-size: 26px; line-height: 1.1; }
+.jp-stat small { color: #aad0ef; }
+.jp-detail-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(320px, .8fr); gap: 18px; margin-top: 18px; }
+.jp-detail-card { min-width: 0; padding: 21px; border-radius: 25px; background: var(--jp-panel); border: 1px solid rgba(113, 179, 241, .15); box-shadow: 0 22px 39px rgba(0,0,0,.23), inset 2px 2px 4px rgba(255,255,255,.035), inset -6px -7px 11px rgba(0,0,0,.20); }
+.jp-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.jp-card-head > svg { color: #84e2ff; filter: drop-shadow(0 0 7px rgba(86, 218, 246, .22)); }
+.jp-skill-table { display: grid; gap: 11px; }
+.jp-skill-row { display: grid; grid-template-columns: minmax(145px, .85fr) minmax(250px, 1.4fr) auto; gap: 15px; align-items: center; padding: 13px; border-radius: 17px; background: rgba(7, 24, 48, .48); border: 1px solid rgba(110, 167, 224, .10); }
+.jp-skill-name strong { display: block; color: #fff; font-size: 15px; line-height: 1.25; }
+.jp-skill-name span { display: block; margin-top: 4px; color: #b5d1ee; font-size: 15px; line-height: 1.3; }
+.jp-skill-meter-labels { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+.jp-skill-meter-labels span,
+.jp-skill-meter-labels strong { font-size: 15px; line-height: 1.25; }
+.jp-skill-meter-labels span { color: #afd0ee; }
+.jp-skill-meter-labels strong { color: #fff; }
+.jp-bar-track { height: 8px; overflow: hidden; border-radius: 999px; background: rgba(45, 78, 120, .39); }
+.jp-bar-user { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #2d8eff, #5fe8f6); }
+.jp-bar-role { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #9367ff, #c9a9ff); }
+.jp-skill-meter-wrap .target-labels { margin-top: 8px; }
+.jp-role-note { display: flex; align-items: flex-start; gap: 11px; margin-top: 16px; padding: 13px; border-radius: 16px; background: linear-gradient(145deg, rgba(101, 78, 177, .13), rgba(44, 125, 184, .09)); border: 1px solid rgba(137, 135, 234, .13); }
+.jp-note-icon { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; border-radius: 10px; color: #c5b6ff; background: rgba(149, 116, 255, .11); }
+.jp-role-note strong { display: block; color: #eef5ff; font-size: 15px; line-height: 1.25; }
+.jp-role-note p { margin: 4px 0 0; color: #bdd5f2; font-size: 15px; line-height: 1.55; }
+.jp-responsibilities { display: grid; gap: 10px; }
+.jp-responsibility-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px; border-radius: 15px; background: rgba(7, 24, 49, .45); border: 1px solid rgba(111, 171, 228, .09); }
+.jp-responsibility-item > span { width: 30px; height: 30px; flex: 0 0 30px; display: grid; place-items: center; border-radius: 9px; color: #81dcff; background: rgba(56, 153, 241, .11); font-size: 15px; font-weight: 900; }
+.jp-responsibility-item p { margin: 3px 0 0; color: #d0e3f8; font-size: 15px; line-height: 1.5; }
+.jp-gap-highlight { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 22px; margin-top: 18px; padding: 22px; border-radius: 25px; background: linear-gradient(145deg, rgba(26, 54, 100, .93), rgba(9, 26, 51, .98)); border: 1px solid rgba(114, 182, 243, .18); }
+.jp-gap-highlight h2,
+.jp-next-step h2 { margin: 7px 0 7px; color: #fff; font-size: 27px; line-height: 1.15; }
+.jp-gap-highlight p,
+.jp-next-step p { margin: 0; color: #c5dcf5; font-size: 15px; line-height: 1.6; }
+.jp-gap-highlight-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
+.jp-highlight-chip { display: flex; flex-direction: column; gap: 4px; min-height: 74px; padding: 12px; border-radius: 15px; background: rgba(7, 23, 47, .56); border: 1px solid rgba(113, 178, 240, .10); }
+.jp-highlight-chip span { color: #fff; font-size: 15px; line-height: 1.3; font-weight: 850; }
+.jp-highlight-chip strong { color: #b8d6f3; font-size: 15px; line-height: 1.3; font-weight: 750; }
+.jp-highlight-chip.success-chip { border-color: rgba(91, 224, 166, .18); background: rgba(41, 141, 107, .08); }
+.jp-highlight-chip.success-chip span { color: #8ceac2; }
+.jp-next-step { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 18px; padding: 20px 22px; border-radius: 24px; background: linear-gradient(145deg, rgba(14, 39, 76, .93), rgba(7, 23, 48, .99)); border: 1px solid rgba(114, 182, 243, .16); }
+.jp-next-step .jp-primary-btn { flex: 0 0 auto; }
+.jp-next-step-badge { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-height: 44px; padding: 10px 14px; border-radius: 14px; color: #8ceeff; background: rgba(61, 161, 222, .10); border: 1px solid rgba(102, 205, 250, .18); font-size: 15px; line-height: 1.2; font-weight: 900; letter-spacing: .05em; }
+
+/* STATE PILL */
+.jp-state-pill { justify-self: end; min-width: 98px; text-align: center; padding: 8px 10px; border-radius: 11px; font-size: 15px; line-height: 1.2; font-weight: 900; }
+.jp-state-pill.matched { color: #7be7b9; background: rgba(77, 224, 166, .08); border: 1px solid rgba(77, 224, 166, .15); }
+.jp-state-pill.developing { color: #c8baff; background: rgba(157, 121, 255, .08); border: 1px solid rgba(157, 121, 255, .15); }
+.jp-state-pill.gap { color: #ffadbf; background: rgba(255, 101, 132, .08); border: 1px solid rgba(255, 101, 132, .14); }
+
+/* RESPONSIVE */
+@media (max-width: 1180px) {
+  .jp-role-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .jp-loading-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .jp-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .jp-hero { grid-template-columns: 1fr; }
+  .jp-hero-visual { min-height: 210px; }
+  .jp-search-panel { grid-template-columns: 1fr; }
+  .jp-domain-row { max-width: none; justify-content: flex-start; }
+  .jp-detail-hero { grid-template-columns: 1fr; }
+  .jp-detail-fit { min-width: 0; width: 100%; }
+  .jp-detail-grid { grid-template-columns: 1fr; }
+  .jp-gap-highlight { grid-template-columns: 1fr; }
+  .jp-next-step { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 700px) {
+  .job-profiles-page { padding-bottom: 34px; }
+  .jp-hero { min-height: auto; padding: 24px 20px; border-radius: 24px; }
+  .jp-hero h1 { font-size: 36px; }
+  .jp-hero p { font-size: 15px; }
+  .jp-hero-visual { display: none; }
+  .jp-role-grid,
+  .jp-loading-grid { grid-template-columns: 1fr; }
+  .jp-section-head { align-items: flex-start; flex-direction: column; }
+  .jp-role-card { min-height: 455px; }
+  .jp-skill-row { grid-template-columns: 1fr; }
+  .jp-state-pill { justify-self: start; }
+  .jp-detail-left { align-items: flex-start; flex-direction: column; }
+  .jp-detail-hero h1 { font-size: 31px; }
+  .jp-detail-fit { flex-direction: row; }
+  .jp-stat-grid { grid-template-columns: 1fr; }
+  .jp-gap-highlight-list { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-profiles-page,
+  .jp-hero-visual,
+  .jp-compass::before,
+  .jp-compass::after,
+  .jp-compass-core,
+  .jp-skeleton { animation: none !important; }
+}
+
+
+/* ============================================================
+   SKILLCOMPASS — JOB PROFILES
+   CANONICAL GITHUB WORKSPACE THEME
+   Scoped to .job-profiles-page only.
+   ============================================================ */
+
+.job-profiles-page {
+  --jp-text: var(--sc-text);
+  --jp-text-soft: var(--sc-copy);
+  --jp-text-bright: #ffffff;
+
+  --jp-blue: var(--sc-blue);
+  --jp-cyan: var(--sc-cyan);
+  --jp-purple: var(--sc-purple);
+  --jp-mint: var(--sc-mint);
+  --jp-rose: #ff9caf;
+
+  --jp-panel: var(--sc-card);
+  --jp-panel-deep: var(--sc-card-dark);
+  --jp-border: var(--sc-line);
+  --jp-border-strong: rgba(99, 183, 255, .34);
+  --jp-shadow: var(--sc-shadow-card);
+
+  background: transparent;
+  color: var(--sc-text);
+}
+
+/* Ambient depth — same restrained navy/cyan/violet atmosphere. */
+.job-profiles-page::before,
+.job-profiles-page::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(12px);
+}
+
+.job-profiles-page::before {
+  width: 390px;
+  height: 390px;
+  top: -170px;
+  right: 4%;
+  background: radial-gradient(circle, rgba(68, 150, 255, .18), transparent 68%);
+}
+
+.job-profiles-page::after {
+  width: 320px;
+  height: 320px;
+  left: -140px;
+  bottom: 4%;
+  background: radial-gradient(circle, rgba(126, 88, 255, .14), transparent 70%);
+}
+
+.job-profiles-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Core clay surfaces. */
+.job-profiles-page .jp-hero,
+.job-profiles-page .jp-search-panel,
+.job-profiles-page .jp-role-card,
+.job-profiles-page .jp-empty,
+.job-profiles-page .jp-detail-hero,
+.job-profiles-page .jp-stat,
+.job-profiles-page .jp-detail-card,
+.job-profiles-page .jp-gap-highlight,
+.job-profiles-page .jp-next-step,
+.job-profiles-page .jp-skeleton {
+  border-color: var(--sc-line);
+  box-shadow: var(--sc-shadow-card);
+}
+
+.job-profiles-page .jp-hero {
+  background:
+    radial-gradient(circle at 83% 20%, rgba(99, 183, 255, .12), transparent 27%),
+    radial-gradient(circle at 72% 88%, rgba(195, 154, 255, .09), transparent 28%),
+    var(--sc-card);
+  border-color: var(--sc-line);
+}
+
+.job-profiles-page .jp-search-panel,
+.job-profiles-page .jp-detail-hero,
+.job-profiles-page .jp-detail-card,
+.job-profiles-page .jp-gap-highlight,
+.job-profiles-page .jp-next-step,
+.job-profiles-page .jp-stat,
+.job-profiles-page .jp-empty {
+  background: var(--sc-card);
+}
+
+.job-profiles-page .jp-search-field {
+  background: var(--sc-card-dark);
+  border-color: var(--sc-line);
+  color: var(--sc-cyan);
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, .34),
+    inset -2px -2px 4px rgba(255, 255, 255, .025);
+}
+
+.job-profiles-page .jp-role-card {
+  background: var(--sc-card);
+}
+
+.job-profiles-page .jp-role-card.featured {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(97, 230, 180, .10), transparent 26%),
+    var(--sc-card);
+}
+
+.job-profiles-page .jp-role-card:hover {
+  border-color: rgba(99, 183, 255, .36);
+  box-shadow:
+    0 27px 48px rgba(0, 7, 20, .46),
+    0 0 22px rgba(99, 183, 255, .055),
+    inset 2px 2px 4px rgba(255, 255, 255, .07),
+    inset -5px -7px 12px rgba(0, 0, 0, .34);
+}
+
+/* Hero typography — bright, cool, and readable. */
+.job-profiles-page .jp-eyebrow,
+.job-profiles-page .jp-section-kicker {
+  color: var(--sc-cyan);
+}
+
+.job-profiles-page .jp-hero h1,
+.job-profiles-page .jp-section-head h2,
+.job-profiles-page .jp-card-head h2,
+.job-profiles-page .jp-role-title-block h3,
+.job-profiles-page .jp-detail-hero h1,
+.job-profiles-page .jp-gap-highlight h2,
+.job-profiles-page .jp-next-step h2,
+.job-profiles-page .jp-empty h1,
+.job-profiles-page .jp-empty h3 {
+  color: var(--sc-text);
+}
+
+.job-profiles-page .jp-hero p,
+.job-profiles-page .jp-section-head p,
+.job-profiles-page .jp-data-notice,
+.job-profiles-page .jp-role-title-block span,
+.job-profiles-page .jp-role-description,
+.job-profiles-page .jp-direction-copy span,
+.job-profiles-page .jp-detail-hero p,
+.job-profiles-page .jp-detail-fit > div:last-child > span,
+.job-profiles-page .jp-detail-fit > div:last-child > small,
+.job-profiles-page .jp-stat span,
+.job-profiles-page .jp-stat small,
+.job-profiles-page .jp-skill-name span,
+.job-profiles-page .jp-skill-meter-labels span,
+.job-profiles-page .jp-role-note p,
+.job-profiles-page .jp-responsibility-item p,
+.job-profiles-page .jp-gap-highlight p,
+.job-profiles-page .jp-next-step p,
+.job-profiles-page .jp-highlight-chip strong,
+.job-profiles-page .jp-empty p {
+  color: var(--sc-copy) !important;
+}
+
+/* Important labels stay distinctly blue instead of grey. */
+.job-profiles-page .jp-count-pill,
+.job-profiles-page .jp-detail-domain,
+.job-profiles-page .jp-domain-badge,
+.job-profiles-page .jp-scope-pill,
+.job-profiles-page .jp-skill-meter-labels strong,
+.job-profiles-page .jp-role-skill-head strong {
+  color: var(--sc-copy-strong);
+}
+
+.job-profiles-page .jp-domain-blue { color: var(--sc-blue); }
+.job-profiles-page .jp-domain-mint { color: var(--sc-mint); }
+.job-profiles-page .jp-domain-purple { color: var(--sc-purple); }
+.job-profiles-page .jp-domain-cyan { color: var(--sc-cyan); }
+
+.job-profiles-page .jp-search-field input {
+  color: var(--sc-text);
+  font-size: 16px;
+}
+
+.job-profiles-page .jp-search-field input::placeholder {
+  color: var(--sc-copy);
+  opacity: 1;
+}
+
+/* Controls follow the canonical button treatment. */
+.job-profiles-page .jp-clear,
+.job-profiles-page .jp-domain-filter,
+.job-profiles-page .jp-primary-btn {
+  border-color: var(--sc-line);
+  color: var(--sc-copy-strong);
+  box-shadow: var(--sc-shadow-button);
+}
+
+.job-profiles-page .jp-clear {
+  background: rgba(99, 183, 255, .09);
+}
+
+.job-profiles-page .jp-clear:hover {
+  color: var(--sc-text);
+  background: rgba(99, 183, 255, .16);
+}
+
+.job-profiles-page .jp-domain-filter {
+  background: rgba(20, 50, 96, .72);
+}
+
+.job-profiles-page .jp-domain-filter:hover {
+  color: var(--sc-text);
+  border-color: rgba(99, 183, 255, .35);
+}
+
+.job-profiles-page .jp-domain-filter.active,
+.job-profiles-page .jp-primary-btn {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--sc-blue), var(--sc-purple));
+  border-color: rgba(126, 215, 255, .28);
+}
+
+.job-profiles-page .jp-primary-btn:hover {
+  box-shadow:
+    0 14px 28px rgba(45, 119, 224, .30),
+    inset 1px 1px 2px rgba(255, 255, 255, .14);
+}
+
+/* Inner surfaces — keep the same clay depth on the smaller components. */
+.job-profiles-page .jp-role-alignment,
+.job-profiles-page .jp-highlight-chip,
+.job-profiles-page .jp-skill-row,
+.job-profiles-page .jp-responsibility-item,
+.job-profiles-page .jp-detail-fit {
+  background: var(--sc-card-dark);
+  border-color: var(--sc-line);
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, .035),
+    inset -4px -5px 9px rgba(0, 0, 0, .28);
+}
+
+.job-profiles-page .jp-role-alignment {
+  background:
+    linear-gradient(145deg, rgba(27, 57, 103, .45), rgba(10, 32, 65, .72));
+}
+
+.job-profiles-page .jp-alignment-ring-inner {
+  background: var(--sc-card-dark);
+  border-color: var(--sc-line);
+}
+
+.job-profiles-page .jp-role-mark-blue {
+  background: linear-gradient(145deg, #63b7ff, #245cc2);
+}
+
+.job-profiles-page .jp-role-mark-mint {
+  background: linear-gradient(145deg, #61e6b4, #168e76);
+}
+
+.job-profiles-page .jp-role-mark-purple {
+  background: linear-gradient(145deg, #c39aff, #6a45d1);
+}
+
+.job-profiles-page .jp-role-mark-cyan {
+  background: linear-gradient(145deg, #62e8ff, #2c83cf);
+}
+
+.job-profiles-page .jp-chip.matched {
+  color: var(--sc-mint);
+}
+
+.job-profiles-page .jp-chip.developing {
+  color: var(--sc-purple);
+}
+
+.job-profiles-page .jp-chip.gap {
+  color: #ffabc0;
+}
+
+.job-profiles-page .jp-chip.neutral {
+  color: var(--sc-copy-strong);
+}
+
+.job-profiles-page .jp-card-action,
+.job-profiles-page .jp-back {
+  color: var(--sc-cyan);
+}
+
+.job-profiles-page .jp-card-action:hover,
+.job-profiles-page .jp-back:hover {
+  color: var(--sc-text);
+}
+
+/* Detail-page bars and states. */
+.job-profiles-page .jp-bar-track {
+  background: rgba(7, 19, 39, .74);
+}
+
+.job-profiles-page .jp-bar-user {
+  background: linear-gradient(90deg, var(--sc-blue), var(--sc-cyan));
+}
+
+.job-profiles-page .jp-bar-role {
+  background: linear-gradient(90deg, var(--sc-purple), #dfc7ff);
+}
+
+.job-profiles-page .jp-role-note {
+  background:
+    linear-gradient(145deg, rgba(145, 111, 255, .10), rgba(43, 135, 189, .08));
+  border-color: rgba(139, 154, 235, .16);
+}
+
+.job-profiles-page .jp-note-icon {
+  color: var(--sc-purple);
+  background: rgba(195, 154, 255, .11);
+}
+
+.job-profiles-page .jp-highlight-chip.success-chip {
+  border-color: rgba(97, 230, 180, .18);
+  background: rgba(52, 182, 137, .08);
+}
+
+.job-profiles-page .jp-highlight-chip.success-chip span {
+  color: var(--sc-mint);
+}
+
+/* Loading state follows the canonical navy surfaces. */
+.job-profiles-page .jp-skeleton {
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20, 50, 96, .72),
+      rgba(36, 75, 133, .38),
+      rgba(20, 50, 96, .72)
+    );
+  background-size: 200% 100%;
+}
+
+/* ============================================================
+   SKILLCOMPASS — READABILITY OVERRIDE
+   Minimum rendered text size: 15px.
+   Keep all compact labels readable and cyan-forward.
+   ============================================================ */
+.job-profiles-page {
+  font-size: 15px !important;
+}
+
+.job-profiles-page .jp-role-mark,
+.job-profiles-page .jp-state-pill,
+.job-profiles-page .jp-card-action,
+.job-profiles-page .jp-back,
+.job-profiles-page .jp-search-field input,
+.job-profiles-page .jp-clear,
+.job-profiles-page .jp-domain-filter,
+.job-profiles-page .jp-primary-btn,
+.job-profiles-page .jp-section-kicker,
+.job-profiles-page .jp-scope-pill,
+.job-profiles-page .jp-detail-domain,
+.job-profiles-page .jp-mini-pill,
+.job-profiles-page .jp-count-pill,
+.job-profiles-page .jp-eyebrow,
+.job-profiles-page .jp-data-notice,
+.job-profiles-page .jp-role-title-block span,
+.job-profiles-page .jp-role-description,
+.job-profiles-page .jp-direction-copy span,
+.job-profiles-page .jp-detail-fit > div:last-child > span,
+.job-profiles-page .jp-detail-fit > div:last-child > small,
+.job-profiles-page .jp-stat span,
+.job-profiles-page .jp-stat small,
+.job-profiles-page .jp-skill-name span,
+.job-profiles-page .jp-skill-meter-labels span,
+.job-profiles-page .jp-role-note p,
+.job-profiles-page .jp-responsibility-item p,
+.job-profiles-page .jp-gap-highlight p,
+.job-profiles-page .jp-next-step p,
+.job-profiles-page .jp-highlight-chip strong,
+.job-profiles-page .jp-empty p,
+.job-profiles-page .jp-alignment-ring span,
+.job-profiles-page .jp-role-skill-head span {
+  font-size: 15px !important;
+}
+
+.job-profiles-page .jp-eyebrow,
+.job-profiles-page .jp-section-kicker {
+  color: var(--sc-cyan) !important;
+}
+
+.job-profiles-page .jp-hero p,
+.job-profiles-page .jp-section-head p,
+.job-profiles-page .jp-data-notice,
+.job-profiles-page .jp-role-title-block span,
+.job-profiles-page .jp-role-description,
+.job-profiles-page .jp-direction-copy span,
+.job-profiles-page .jp-detail-hero p,
+.job-profiles-page .jp-detail-fit > div:last-child > span,
+.job-profiles-page .jp-detail-fit > div:last-child > small,
+.job-profiles-page .jp-stat span,
+.job-profiles-page .jp-stat small,
+.job-profiles-page .jp-skill-name span,
+.job-profiles-page .jp-skill-meter-labels span,
+.job-profiles-page .jp-role-note p,
+.job-profiles-page .jp-responsibility-item p,
+.job-profiles-page .jp-gap-highlight p,
+.job-profiles-page .jp-next-step p,
+.job-profiles-page .jp-highlight-chip strong,
+.job-profiles-page .jp-empty p {
+  color: var(--sc-copy-strong) !important;
+}
+
+.job-profiles-page .jp-search-field input::placeholder {
+  color: var(--sc-cyan) !important;
+  opacity: .82 !important;
+}
+
+/* Accessibility + reduced motion. */
+.job-profiles-page button:focus-visible,
+.job-profiles-page input:focus-visible {
+  outline: 2px solid rgba(98, 232, 255, .74);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-profiles-page *,
+  .job-profiles-page::before,
+  .job-profiles-page::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

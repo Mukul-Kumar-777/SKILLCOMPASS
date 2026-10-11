@@ -1,0 +1,2107 @@
+/* ============================================================
+   SKILLCOMPASS — TECHNICAL ANALYSIS
+   Same dark navy claymorphism language as GitHub + Skills pages.
+   ============================================================ */
+
+.analysis-page {
+  --analysis-bg: #050d20;
+  --analysis-panel: linear-gradient(145deg, rgba(18, 45, 88, 0.97), rgba(8, 26, 55, 0.98));
+  --analysis-panel-soft: linear-gradient(145deg, rgba(25, 57, 105, 0.92), rgba(11, 32, 65, 0.97));
+  --analysis-line: rgba(108, 164, 238, 0.16);
+  --analysis-text: #f4f8ff;
+  --analysis-muted: #aec2df;
+  --analysis-dim: #7189ad;
+  --analysis-blue: #2f8cff;
+  --analysis-cyan: #27d5e6;
+  --analysis-purple: #8a5cf6;
+  --analysis-mint: #4fe3a5;
+  --analysis-orange: #ffb34e;
+  --analysis-red: #ff718c;
+  width: 100%;
+  min-width: 0;
+  padding: 18px 0 48px;
+  color: var(--analysis-text);
+  overflow-x: hidden;
+  animation: analysis-page-in .45s ease both;
+}
+
+@keyframes analysis-page-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   HERO — MATCHES GITHUB / SKILLS HERO COMPOSITION
+   ============================================================ */
+
+.analysis-header {
+  position: relative;
+  min-height: 155px;
+  height: 155px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 0 22px;
+  padding: 8px 26px 12px 38px;
+  overflow: visible;
+}
+
+.analysis-hero-main {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.analysis-hero-icon {
+  width: 124px;
+  height: 118px;
+  flex: 0 0 124px;
+  display: grid;
+  place-items: center;
+  color: #f6f9ff;
+  border-radius: 29px;
+  background: linear-gradient(145deg, #2a4474 0%, #142b53 56%, #0b1b39 100%);
+  border: 1px solid rgba(139,187,255,.18);
+  box-shadow:
+    0 22px 40px rgba(0,0,0,.44),
+    0 0 28px rgba(55,127,255,.17),
+    inset 3px 3px 6px rgba(255,255,255,.09),
+    inset -7px -8px 13px rgba(0,0,0,.42);
+}
+
+.analysis-hero-copy {
+  min-width: 0;
+}
+
+.analysis-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #73b5ff;
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.analysis-hero-copy h1 {
+  margin: 0;
+  font-size: 43px;
+  line-height: 1.03;
+  letter-spacing: -1.8px;
+  font-weight: 850;
+}
+
+.analysis-hero-copy h1 span { color: #f4f7ff; }
+
+.analysis-hero-copy h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #fff 0%, #6aa8ff 48%, #9672ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.analysis-hero-copy p {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: #b7c9e5;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.analysis-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 9px;
+}
+
+.analysis-hero-meta span,
+.analysis-hero-meta small {
+  color: #91afd2;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.analysis-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #59dfb0;
+}
+
+.analysis-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38dca5;
+  box-shadow: 0 0 11px rgba(56,220,165,.72);
+}
+
+.analysis-hero-art {
+  position: relative;
+  width: 325px;
+  height: 150px;
+  flex: 0 0 325px;
+  overflow: visible;
+}
+
+.analysis-quote {
+  position: absolute;
+  top: 28px;
+  left: 2px;
+  width: 255px;
+  z-index: 5;
+  color: #72c1ff;
+  text-shadow: 0 5px 18px rgba(0,0,0,.36);
+}
+
+.analysis-quote > span,
+.analysis-quote > b {
+  position: absolute;
+  color: #9b73ff;
+  font-size: 48px;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.analysis-quote > span { left: 0; top: -14px; }
+.analysis-quote > b { right: 0; bottom: -23px; }
+
+.analysis-quote p {
+  margin: 0 0 0 22px;
+  color: #d4e6ff;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 650;
+}
+
+.analysis-orbit {
+  position: absolute;
+  border: 1px solid rgba(72,145,255,.22);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 0 12px rgba(82,137,255,.14));
+}
+
+.orbit-one {
+  width: 230px;
+  height: 94px;
+  right: -25px;
+  top: 28px;
+}
+
+.orbit-two {
+  width: 185px;
+  height: 110px;
+  right: 0;
+  top: 10px;
+  border-color: rgba(149,104,255,.19);
+  transform: rotate(30deg);
+}
+
+.analysis-hero-sphere {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sphere-one {
+  width: 54px;
+  height: 54px;
+  right: 20px;
+  top: 17px;
+  background: radial-gradient(circle at 34% 28%, #86c7ff 0%, #367ed4 42%, #153665 72%, #0c1b39 100%);
+  box-shadow: 0 15px 30px rgba(24,82,161,.3), 0 0 24px rgba(54,129,255,.2), inset 7px 7px 11px rgba(255,255,255,.12);
+  opacity: .9;
+}
+
+.sphere-two {
+  width: 28px;
+  height: 28px;
+  right: 78px;
+  bottom: 9px;
+  background: radial-gradient(circle at 35% 28%, #d1b5ff 0%, #8c5cf5 50%, #2e1c69 100%);
+  box-shadow: 0 0 24px rgba(138,92,246,.28);
+}
+
+.analysis-hero-refresh {
+  position: absolute;
+  right: 4px;
+  bottom: 1px;
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(121,181,247,.2);
+  border-radius: 12px;
+  color: #dff0ff;
+  background: linear-gradient(145deg, #1f4f91, #102c59);
+  box-shadow: 0 10px 20px rgba(0,0,0,.26), inset 1px 1px 2px rgba(255,255,255,.13);
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.analysis-hero-refresh:hover:not(:disabled) {
+  transform: translateY(-1px) rotate(8deg);
+  filter: brightness(1.08);
+}
+
+.analysis-hero-refresh:disabled { opacity: .55; cursor: wait; }
+
+.analysis-hero-loading-line {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: -4px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(72,145,255,.12);
+}
+
+.analysis-hero-loading-line::after {
+  content: "";
+  display: block;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #52a4ff, #a06cff, transparent);
+  animation: analysis-loading-sweep 1.25s ease-in-out infinite;
+}
+
+@keyframes analysis-loading-sweep {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(340%); }
+}
+
+/* ============================================================
+   METRICS
+   ============================================================ */
+
+.analysis-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.analysis-metric {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 16px;
+  border-radius: 19px;
+  background: var(--analysis-panel);
+  border: 1px solid rgba(101,157,229,.15);
+  box-shadow: 0 16px 30px rgba(0,0,0,.24), inset 1px 1px 2px rgba(255,255,255,.05);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.analysis-metric:hover {
+  transform: translateY(-2px);
+  border-color: rgba(111,175,252,.24);
+  box-shadow: 0 18px 34px rgba(0,0,0,.28), 0 0 22px rgba(47,140,255,.06), inset 1px 1px 2px rgba(255,255,255,.06);
+}
+
+.analysis-metric-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #eef7ff;
+  box-shadow: 0 10px 18px rgba(0,0,0,.2), inset 1px 1px 2px rgba(255,255,255,.12);
+}
+
+.analysis-metric.tone-blue .analysis-metric-icon { background: linear-gradient(145deg,#3e9cff,#1c5cc7); }
+.analysis-metric.tone-mint .analysis-metric-icon { background: linear-gradient(145deg,#69edc0,#15996e); }
+.analysis-metric.tone-purple .analysis-metric-icon { background: linear-gradient(145deg,#b17dff,#6438d6); }
+.analysis-metric.tone-cyan .analysis-metric-icon { background: linear-gradient(145deg,#59e0ea,#168eae); }
+
+.analysis-metric strong {
+  display: block;
+  color: #f5f9ff;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -.5px;
+}
+
+.analysis-metric small {
+  display: block;
+  margin-top: 5px;
+  color: #9cb5d5;
+  font-size: 15px;
+  font-weight: 680;
+}
+
+/* ============================================================
+   PANELS + HEADERS
+   ============================================================ */
+
+.analysis-main-grid,
+.analysis-secondary-grid {
+  display: grid;
+  grid-template-columns: 1.23fr .77fr;
+  gap: 17px;
+  margin-bottom: 18px;
+}
+
+.analysis-panel {
+  min-width: 0;
+  padding: 21px;
+  border-radius: 21px;
+  border: 1px solid rgba(101,157,229,.15);
+  background: var(--analysis-panel);
+  box-shadow: 0 18px 36px rgba(0,0,0,.26), inset 1px 1px 2px rgba(255,255,255,.05);
+}
+
+.analysis-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 17px;
+}
+
+.analysis-section-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: #77b8ff;
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.analysis-panel h2 {
+  margin: 0;
+  color: #f5f8ff;
+  font-size: 21px;
+  letter-spacing: -.6px;
+}
+
+.analysis-panel p {
+  margin: 6px 0 0;
+  color: #92aac9;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SKILL PROFILE
+   ============================================================ */
+
+.analysis-skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.analysis-skill-row {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 38px minmax(120px, 1.05fr) minmax(80px, 1.1fr) 42px 96px;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  text-align: left;
+  color: inherit;
+  background: linear-gradient(145deg, rgba(24,54,101,.76), rgba(11,31,63,.88));
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,.025);
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.analysis-skill-row:hover,
+.analysis-skill-row.selected {
+  transform: translateX(2px);
+  border-color: rgba(93,164,255,.2);
+  background: linear-gradient(145deg, rgba(29,66,121,.88), rgba(12,35,72,.96));
+}
+
+.analysis-skill-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: white;
+  font-size: 15px;
+  font-weight: 850;
+  box-shadow: 0 7px 14px rgba(0,0,0,.22), inset 1px 1px 2px rgba(255,255,255,.12);
+}
+
+.analysis-skill-mark.tone-0 { background: linear-gradient(145deg,#47a0ff,#1e5dcb); }
+.analysis-skill-mark.tone-1 { background: linear-gradient(145deg,#5adfe9,#168fb6); }
+.analysis-skill-mark.tone-2 { background: linear-gradient(145deg,#b17dff,#6137d4); }
+.analysis-skill-mark.tone-3 { background: linear-gradient(145deg,#6be8b8,#15966f); }
+.analysis-skill-mark.tone-4 { background: linear-gradient(145deg,#ffcf61,#d78d22); }
+
+.analysis-skill-copy {
+  min-width: 0;
+}
+
+.analysis-skill-copy strong,
+.analysis-skill-copy small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.analysis-skill-copy strong {
+  color: #eaf2ff;
+  font-size: 15px;
+  font-weight: 780;
+}
+
+.analysis-skill-copy small {
+  margin-top: 2px;
+  color: #748eb0;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.analysis-progress {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #14335f;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+}
+
+.analysis-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#2f8cff,#9569ff);
+  box-shadow: 0 0 11px rgba(60,148,255,.34);
+}
+
+.analysis-score {
+  color: #dceafe;
+  font-size: 15px;
+  text-align: right;
+}
+
+.analysis-level,
+.analysis-selected-score span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  min-width: 74px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+  border: 1px solid rgba(143,189,242,.16);
+  background: rgba(40,77,127,.34);
+  color: #c9def8;
+}
+
+.level-expert {
+  color: #65e7b7;
+  border-color: rgba(79,227,165,.25);
+  background: rgba(21,111,85,.22);
+}
+.level-advanced {
+  color: #72b5ff;
+  border-color: rgba(73,153,255,.25);
+  background: rgba(27,87,166,.22);
+}
+.level-intermediate {
+  color: #ffc164;
+  border-color: rgba(255,185,72,.23);
+  background: rgba(121,79,20,.2);
+}
+.level-beginner {
+  color: #ef84ad;
+  border-color: rgba(238,102,157,.22);
+  background: rgba(127,39,78,.18);
+}
+
+.analysis-view-all {
+  margin: 13px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  color: #79baff;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.analysis-view-all:hover { color: #a8d0ff; }
+
+/* ============================================================
+   DISTRIBUTION
+   ============================================================ */
+
+.analysis-donut-wrap {
+  display: grid;
+  grid-template-columns: 195px minmax(0,1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 275px;
+}
+
+.analysis-donut {
+  width: 190px;
+  height: 190px;
+  padding: 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 20px 36px rgba(0,0,0,.28), inset 0 0 22px rgba(2,14,35,.3);
+}
+
+.analysis-donut-hole {
+  width: 135px;
+  height: 135px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 25%, #173763, #0a1f42 72%);
+  border: 1px solid rgba(126,182,246,.12);
+  box-shadow: inset 5px 7px 11px rgba(0,0,0,.28), inset -2px -2px 4px rgba(255,255,255,.03);
+}
+
+.analysis-donut-hole strong {
+  color: #f4f8ff;
+  font-size: 29px;
+  line-height: 1;
+}
+
+.analysis-donut-hole span {
+  margin-top: 4px;
+  color: #829dbe;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.analysis-distribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.analysis-distribution-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.analysis-distribution-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c5d8ee;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.analysis-distribution-row strong {
+  color: #eef6ff;
+  font-size: 15px;
+}
+
+.distribution-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.dot-expert { background: #43e2ad; color: #43e2ad; }
+.dot-advanced { background: #418dff; color: #418dff; }
+.dot-intermediate { background: #ffb15a; color: #ffb15a; }
+.dot-beginner { background: #ee669d; color: #ee669d; }
+
+/* ============================================================
+   INTELLIGENCE TABLE
+   ============================================================ */
+
+.analysis-intelligence {
+  margin-bottom: 18px;
+}
+
+.analysis-table {
+  overflow: hidden;
+  border: 1px solid rgba(111,165,228,.11);
+  border-radius: 15px;
+}
+
+.analysis-table-head,
+.analysis-table-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr .85fr .7fr .55fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.analysis-table-head {
+  padding: 11px 13px;
+  color: #728bab;
+  background: rgba(4,17,37,.44);
+  font-size: 15px;
+  font-weight: 820;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.analysis-table-row {
+  width: 100%;
+  padding: 12px 13px;
+  border: 0;
+  border-top: 1px solid rgba(108,164,238,.08);
+  text-align: left;
+  color: #a9bfdc;
+  background: rgba(13,36,70,.46);
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .16s ease;
+}
+
+.analysis-table-row:hover,
+.analysis-table-row.selected {
+  background: rgba(27,62,112,.68);
+}
+
+.analysis-table-row > span:nth-child(n+2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.analysis-table-skill {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.analysis-table-skill i {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #eff6ff;
+  background: linear-gradient(145deg,#367fd9,#174b98);
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.analysis-table-skill strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #eaf3ff;
+  font-size: 15px;
+}
+
+.analysis-table-row .analysis-level {
+  justify-self: start;
+  min-width: 69px;
+  padding: 5px 7px;
+  margin-right: 5px;
+}
+
+.analysis-table-row em {
+  color: #d7e7fb;
+  font-style: normal;
+  font-weight: 800;
+}
+
+/* ============================================================
+   SELECTED EVIDENCE
+   ============================================================ */
+
+.analysis-selected-skill {
+  margin-top: 15px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(101,157,229,.13);
+  background: linear-gradient(145deg, rgba(26,60,111,.78), rgba(10,31,64,.93));
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,.03);
+}
+
+.analysis-selected-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.analysis-selected-head h3 {
+  margin: 0;
+  color: #f4f8ff;
+  font-size: 18px;
+}
+
+.analysis-selected-head p {
+  max-width: 690px;
+  margin: 5px 0 0;
+  color: #91a9c9;
+  font-size: 15px;
+}
+
+.analysis-selected-score {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.analysis-selected-score strong {
+  display: block;
+  color: #74c0ff;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.analysis-selected-score span {
+  margin-top: 7px;
+  justify-self: end;
+}
+
+.analysis-selected-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.analysis-selected-meta span {
+  padding: 7px 9px;
+  color: #8fa8c9;
+  border: 1px solid rgba(111,165,228,.12);
+  border-radius: 9px;
+  background: rgba(6,23,49,.42);
+  font-size: 15px;
+}
+
+.analysis-selected-meta b {
+  margin-left: 4px;
+  color: #e7f0fe;
+}
+
+.analysis-evidence-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.analysis-evidence-item {
+  display: flex;
+  gap: 9px;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid rgba(103,163,236,.1);
+  border-radius: 11px;
+  background: rgba(8,28,58,.52);
+}
+
+.analysis-evidence-item > span {
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #68dfb3;
+  background: rgba(33,119,93,.22);
+}
+
+.analysis-evidence-item div { min-width: 0; }
+
+.analysis-evidence-item strong,
+.analysis-evidence-item small {
+  display: block;
+}
+
+.analysis-evidence-item strong {
+  color: #dceafa;
+  font-size: 15px;
+}
+
+.analysis-evidence-item small {
+  margin-top: 2px;
+  color: #7f98b7;
+  font-size: 8.5px;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   METHODOLOGY
+   ============================================================ */
+
+.analysis-methodology {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1.75fr auto;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.analysis-methodology::after {
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -110px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(138,92,246,.09);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.analysis-methodology-copy h2 {
+  margin: 0;
+  color: #f5f8ff;
+  font-size: 21px;
+  letter-spacing: -.6px;
+}
+
+.analysis-methodology-copy p {
+  max-width: 450px;
+  margin-top: 8px;
+}
+
+.analysis-methodology-flow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  z-index: 2;
+}
+
+.analysis-flow-step {
+  min-width: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+}
+
+.analysis-flow-step > span {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #e7f3ff;
+  background: linear-gradient(145deg,#275fba,#153564);
+  border: 1px solid rgba(105,168,244,.16);
+  box-shadow: 0 10px 18px rgba(0,0,0,.2), inset 1px 1px 2px rgba(255,255,255,.08);
+}
+
+.analysis-flow-step strong {
+  color: #b8cce5;
+  font-size: 15px;
+  font-weight: 760;
+}
+
+.analysis-flow-arrow {
+  color: #5e8bc2;
+  transform: rotate(-1deg);
+}
+
+.analysis-methodology-version {
+  position: relative;
+  z-index: 2;
+  min-width: 90px;
+  padding: 9px 11px;
+  border-radius: 11px;
+  border: 1px solid rgba(109,167,238,.11);
+  background: rgba(5,22,46,.5);
+  text-align: center;
+}
+
+.analysis-methodology-version span,
+.analysis-methodology-version strong {
+  display: block;
+}
+
+.analysis-methodology-version span {
+  color: #738daf;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.analysis-methodology-version strong {
+  margin-top: 4px;
+  color: #dceafe;
+  font-size: 15px;
+}
+
+/* ============================================================
+   TECH STACK + COVERAGE
+   ============================================================ */
+
+.analysis-tech-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.analysis-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border-radius: 11px;
+  color: #e5f0ff;
+  border: 1px solid rgba(111,165,228,.12);
+  background: linear-gradient(145deg, rgba(27,61,112,.78), rgba(10,31,63,.86));
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,.03);
+  font-size: 15px;
+  font-weight: 760;
+}
+
+.analysis-tech-pill i {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: white;
+  background: rgba(69,131,224,.55);
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.analysis-tech-pill.tone-1 i { background: rgba(45,177,192,.62); }
+.analysis-tech-pill.tone-2 i { background: rgba(126,85,220,.65); }
+.analysis-tech-pill.tone-3 i { background: rgba(40,154,111,.62); }
+.analysis-tech-pill.tone-4 i { background: rgba(206,145,50,.62); }
+
+.analysis-coverage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.analysis-coverage-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: rgba(8,28,59,.44);
+  border: 1px solid rgba(101,157,229,.08);
+}
+
+.analysis-coverage-row span {
+  color: #8ba4c3;
+  font-size: 15px;
+}
+
+.analysis-coverage-row strong {
+  color: #eaf4ff;
+  font-size: 15px;
+}
+
+.analysis-run-footnote {
+  margin-top: 12px;
+  color: #7189aa;
+  font-size: 15px;
+}
+
+/* ============================================================
+   REPOSITORY EVIDENCE
+   ============================================================ */
+
+.analysis-repositories {
+  margin-bottom: 5px;
+}
+
+.analysis-repository-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+}
+
+.analysis-repository-card {
+  min-width: 0;
+  padding: 13px;
+  border-radius: 15px;
+  border: 1px solid rgba(104,160,230,.11);
+  background: linear-gradient(145deg, rgba(22,53,99,.72), rgba(9,29,59,.9));
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+.analysis-repository-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(104,174,255,.22);
+}
+
+.analysis-repository-head {
+  display: flex;
+  gap: 9px;
+  min-width: 0;
+  align-items: center;
+}
+
+.analysis-repository-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #eaf5ff;
+  background: linear-gradient(145deg,#316fc4,#183a73);
+  box-shadow: 0 7px 14px rgba(0,0,0,.18), inset 1px 1px 2px rgba(255,255,255,.08);
+}
+
+.analysis-repository-head strong,
+.analysis-repository-head small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.analysis-repository-head strong {
+  color: #eaf3ff;
+  font-size: 15px;
+}
+
+.analysis-repository-head small {
+  margin-top: 2px;
+  color: #748eaf;
+  font-size: 15px;
+}
+
+.analysis-commit {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: #7189aa;
+  font-size: 15px;
+}
+
+.analysis-commit code {
+  color: #91bcf0;
+  font-family: Consolas, monospace;
+  font-size: 15px;
+}
+
+.analysis-language-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.analysis-language-mini > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+  color: #8fa7c6;
+  font-size: 15px;
+}
+
+.analysis-language-mini b {
+  color: #d9e9fb;
+  font-weight: 800;
+}
+
+.analysis-repository-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.analysis-small-tech {
+  padding: 5px 6px;
+  border: 1px solid rgba(111,165,228,.1);
+  border-radius: 7px;
+  color: #9fc0e3;
+  background: rgba(7,24,51,.4);
+  font-size: 15px;
+  font-weight: 730;
+}
+
+/* ============================================================
+   STATES + SKELETONS
+   ============================================================ */
+
+.analysis-state {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 35px;
+  text-align: center;
+  border: 1px solid rgba(101,157,229,.14);
+  border-radius: 20px;
+  background: var(--analysis-panel);
+  box-shadow: 0 18px 36px rgba(0,0,0,.26);
+}
+
+.analysis-state-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ff89a5;
+  background: linear-gradient(145deg,#5d3656,#342041);
+  box-shadow: 0 12px 22px rgba(0,0,0,.23), inset 1px 1px 2px rgba(255,255,255,.06);
+}
+
+.analysis-state h2 {
+  margin: 14px 0 0;
+  color: #f3f8ff;
+  font-size: 22px;
+}
+
+.analysis-state p {
+  max-width: 530px;
+  margin: 7px auto 0;
+  color: #94abc9;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.analysis-state-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.analysis-primary-action,
+.analysis-secondary-action {
+  height: 41px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 780;
+  cursor: pointer;
+}
+
+.analysis-primary-action {
+  color: #f1f7ff;
+  background: linear-gradient(145deg,#2773df,#184ca8);
+  border: 1px solid rgba(112,181,255,.2);
+}
+
+.analysis-secondary-action {
+  color: #afc6e2;
+  background: rgba(16,41,79,.7);
+  border: 1px solid rgba(103,163,236,.12);
+}
+
+.analysis-empty-inline {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #7590b2;
+  font-size: 15px;
+}
+
+.analysis-skeleton-metrics {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.analysis-skeleton-grid {
+  display: grid;
+  grid-template-columns: 1.23fr .77fr;
+  gap: 17px;
+}
+
+.analysis-skeleton {
+  position: relative;
+  overflow: hidden;
+  min-height: 88px;
+  border: 1px solid rgba(103,163,236,.08);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(19,47,91,.73), rgba(8,26,54,.85));
+}
+
+.analysis-skeleton.panel-large {
+  min-height: 360px;
+}
+
+.analysis-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.045), transparent);
+  transform: translateX(-100%);
+  animation: analysis-skeleton-sweep 1.25s ease-in-out infinite;
+}
+
+@keyframes analysis-skeleton-sweep {
+  to { transform: translateX(100%); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1180px) {
+  .analysis-metrics,
+  .analysis-skeleton-metrics {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .analysis-main-grid,
+  .analysis-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-methodology {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-methodology-copy p {
+    max-width: none;
+  }
+
+  .analysis-methodology-flow {
+    justify-content: flex-start;
+  }
+
+  .analysis-methodology-version {
+    width: fit-content;
+  }
+
+  .analysis-repository-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .analysis-header {
+    height: auto;
+    min-height: 155px;
+    align-items: flex-start;
+  }
+
+  .analysis-hero-art {
+    width: 250px;
+    flex-basis: 250px;
+    opacity: .88;
+  }
+
+  .analysis-hero-copy p {
+    max-width: 500px;
+  }
+
+  .analysis-donut-wrap {
+    grid-template-columns: 180px minmax(0,1fr);
+  }
+
+  .analysis-donut {
+    width: 174px;
+    height: 174px;
+  }
+
+  .analysis-evidence-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .analysis-header {
+    padding: 8px 18px 12px 22px;
+  }
+
+  .analysis-hero-main {
+    gap: 16px;
+  }
+
+  .analysis-hero-icon {
+    width: 92px;
+    height: 92px;
+    flex-basis: 92px;
+    border-radius: 24px;
+  }
+
+  .analysis-hero-copy h1 {
+    font-size: 35px;
+  }
+
+  .analysis-hero-copy p {
+    font-size: 15px;
+  }
+
+  .analysis-hero-art {
+    display: none;
+  }
+
+  .analysis-skill-row {
+    grid-template-columns: 34px minmax(0,1fr) 82px 37px;
+  }
+
+  .analysis-skill-row .analysis-level {
+    display: none;
+  }
+
+  .analysis-table-head {
+    display: none;
+  }
+
+  .analysis-table-row {
+    grid-template-columns: 1.2fr .8fr .7fr;
+    gap: 10px;
+  }
+
+  .analysis-table-row > span:nth-child(2),
+  .analysis-table-row > span:nth-child(4) {
+    display: none;
+  }
+
+  .analysis-repository-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-distribution {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .analysis-metrics,
+  .analysis-skeleton-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-panel {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .analysis-donut-wrap {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .analysis-distribution-list {
+    width: 100%;
+  }
+
+  .analysis-selected-head {
+    flex-direction: column;
+  }
+
+  .analysis-selected-score {
+    text-align: left;
+  }
+
+  .analysis-selected-score span {
+    justify-self: start;
+  }
+
+  .analysis-state-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .analysis-primary-action,
+  .analysis-secondary-action {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-page,
+  .analysis-metric,
+  .analysis-skill-row,
+  .analysis-repository-card,
+  .analysis-hero-refresh,
+  .analysis-skeleton::after,
+  .analysis-hero-loading-line::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   ANALYSIS TABLE — A / B / C
+   A = table headers
+   B = Category column
+   C = Skill column
+   ============================================================ */
+
+/* A — table headers */
+.analysis-page .analysis-intelligence .analysis-table-head {
+  color: #f0c6ff !important;
+  font-size: 20px !important;
+}
+
+/* B — Category values */
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(2) {
+  color: #66e6c2 !important;
+  font-size: 16px !important;
+}
+
+/* C — Skill values */
+.analysis-page .analysis-intelligence .analysis-table-skill strong {
+  color: #5eb7ff !important;
+  font-size: 18px !important;
+}
+.analysis-skill-row .analysis-skill-copy strong {
+  color: #80ffff !important;
+  font-size: 18px !important;
+  font-weight: 780;
+}
+/* ============================================================
+   GROUP B — SKILL PROFILE CATEGORY
+   ============================================================ */
+.analysis-page .analysis-skill-profile .analysis-skill-row .analysis-skill-copy > small {
+  color: #8080ff !important;
+  font-size: 16px !important;
+}
+
+/* ============================================================
+   GROUP C — PROFICIENCY
+   ============================================================ */
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(3),
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(3) .analysis-level,
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(3) em {
+  color: #66e3ff !important;
+  font-size: 16px !important;
+}
+
+/* ============================================================
+   GROUP D — CONFIDENCE
+   ============================================================ */
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(4) {
+  color: #b48cff !important;
+  font-size: 16px !important;
+}
+
+/* ============================================================
+   GROUP E — EVIDENCE
+   ============================================================ */
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(5) {
+  color: #ffb45c !important;
+  font-size: 16px !important;
+}
+/* GROUP A — Table headers */
+.analysis-page .analysis-intelligence .analysis-table-head {
+  font-size: 20px !important;
+}
+
+
+/* GROUP B — Category values */
+.analysis-page .analysis-intelligence .analysis-table-row > span:nth-child(2) {
+  font-size: 16px !important;
+}
+
+
+/* GROUP C — Skill names */
+.analysis-page .analysis-intelligence .analysis-table-skill strong {
+  font-size: 18px !important;
+}
+
+/* ============================================================
+   ANALYSIS — SMALL / MUTED TEXT
+   Only muted body-text elements are changed.
+   ============================================================ */
+
+.analysis-page .analysis-hero-meta small,
+.analysis-page .analysis-metric small,
+.analysis-page .analysis-skill-copy small,
+.analysis-page .analysis-donut-hole span,
+.analysis-page .analysis-distribution-row span,
+.analysis-page .analysis-table-row,
+.analysis-page .analysis-selected-head p,
+.analysis-page .analysis-selected-meta span,
+.analysis-page .analysis-evidence-item small,
+.analysis-page .analysis-flow-step strong,
+.analysis-page .analysis-methodology-version span,
+.analysis-page .analysis-repository-head small,
+.analysis-page .analysis-commit,
+.analysis-page .analysis-language-mini > span,
+.analysis-page .analysis-coverage-row span,
+.analysis-page .analysis-run-footnote,
+.analysis-page .analysis-empty-inline {
+  color: #dbe9ff !important;
+  font-size: 15px !important;
+}
+
+
+/* ============================================================
+   SKILL PROFILE — SCOPED SIZE ENLARGEMENT ONLY
+   Existing CSS remains untouched.
+   ============================================================ */
+
+/* Group A — section label */
+.analysis-page .analysis-skill-profile .analysis-section-kicker {
+  font-size: 15px !important;
+}
+
+/* Group A — main heading */
+.analysis-page .analysis-skill-profile .analysis-panel-head h2 {
+  font-size: 27px !important;
+}
+
+/* Group A — description */
+.analysis-page .analysis-skill-profile .analysis-panel-head p {
+  font-size: 15px !important;
+}
+
+/* Group B — skill names */
+.analysis-page .analysis-skill-profile .analysis-skill-copy strong {
+  font-size: 18px !important;
+}
+
+/* Group B — skill categories */
+.analysis-page .analysis-skill-profile .analysis-skill-copy small {
+  font-size: 16px !important;
+}
+
+/* ============================================================
+   ANALYSIS — ENLARGED CARD TYPOGRAPHY
+   Scoped additions only. Existing rules are not modified.
+   ============================================================ */
+
+/* Skill Profile card */
+.analysis-page .analysis-skill-profile .analysis-section-kicker,
+.analysis-page .analysis-distribution .analysis-section-kicker,
+.analysis-page .analysis-intelligence .analysis-section-kicker {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-panel-head h2,
+.analysis-page .analysis-distribution .analysis-panel-head h2,
+.analysis-page .analysis-intelligence .analysis-panel-head h2 {
+  font-size: 26px !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-panel-head p,
+.analysis-page .analysis-distribution .analysis-panel-head p,
+.analysis-page .analysis-intelligence .analysis-panel-head p {
+  font-size: 15px !important;
+}
+
+/* Skill Profile rows */
+.analysis-page .analysis-skill-profile .analysis-skill-copy strong {
+  font-size: 18px !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-skill-copy small {
+  font-size: 16px !important;
+}
+
+/* Proficiency card */
+.analysis-page .analysis-distribution .analysis-distribution-row span {
+  font-size: 16px !important;
+}
+
+.analysis-page .analysis-distribution .analysis-distribution-row strong {
+  font-size: 18px !important;
+}
+
+.analysis-page .analysis-distribution .analysis-donut-hole strong {
+  font-size: 32px !important;
+}
+
+.analysis-page .analysis-distribution .analysis-donut-hole span {
+  font-size: 15px !important;
+}
+
+/* Skill Intelligence card */
+.analysis-page .analysis-intelligence .analysis-table-head {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-row {
+  font-size: 16px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-skill strong {
+  font-size: 17px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-row .analysis-level,
+.analysis-page .analysis-intelligence .analysis-table-row em {
+  font-size: 15px !important;
+}
+
+/* ============================================================
+   ANALYSIS — CARD TYPOGRAPHY ENLARGEMENT
+   Typography only. Existing layout/colors/logic remain intact.
+   ============================================================ */
+
+/* Shared card headers */
+.analysis-page .analysis-panel-head .analysis-section-kicker {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-panel-head h2 {
+  font-size: 24px !important;
+}
+
+.analysis-page .analysis-panel-head p {
+  font-size: 15px !important;
+}
+
+/* Skill Profile card */
+.analysis-page .analysis-skill-profile .analysis-skill-copy strong {
+  font-size: 16px !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-skill-copy small {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-score {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-level {
+  font-size: 15px !important;
+}
+
+/* Proficiency card */
+.analysis-page .analysis-distribution .analysis-distribution-row span {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-distribution .analysis-distribution-row strong {
+  font-size: 16px !important;
+}
+
+.analysis-page .analysis-donut-hole span {
+  font-size: 15px !important;
+}
+
+/* Skill Intelligence card */
+.analysis-page .analysis-intelligence .analysis-table-head {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-row {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-skill strong {
+  font-size: 16px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-row .analysis-level {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-intelligence .analysis-table-row em {
+  font-size: 15px !important;
+}
+
+/* Selected Skill card */
+.analysis-page .analysis-selected-skill .analysis-section-kicker {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-selected-skill h3 {
+  font-size: 21px !important;
+}
+
+.analysis-page .analysis-selected-skill .analysis-selected-head p {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-selected-skill .analysis-selected-meta span {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-selected-skill .analysis-evidence-item strong {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-selected-skill .analysis-evidence-item small {
+  font-size: 15px !important;
+}
+
+/* Methodology card */
+.analysis-page .analysis-methodology .analysis-methodology-copy h2 {
+  font-size: 24px !important;
+}
+
+.analysis-page .analysis-methodology .analysis-methodology-copy p {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-methodology .analysis-flow-step strong {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-methodology .analysis-methodology-version span {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-methodology .analysis-methodology-version strong {
+  font-size: 15px !important;
+}
+
+/* Technology Stack + Analysis Coverage cards */
+.analysis-page .analysis-tech-pill {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-coverage-row span {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-coverage-row strong {
+  font-size: 15px !important;
+}
+
+/* Repository Evidence cards */
+.analysis-page .analysis-repository-head strong {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-repository-head small {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-commit {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-commit code {
+  font-size: 15px !important;
+}
+
+.analysis-page .analysis-language-mini > span {
+   font-size: 15px !important;
+   color : #6dc1d0;
+}
+
+.analysis-page .analysis-small-tech {
+  font-size: 15px !important;
+  color : #6dc1d0;
+}
+/* Enlarge the small heading/kicker on every Analysis card */
+.analysis-page .analysis-section-kicker {
+  font-size: 20px !important;
+}
+
+/* ONLY: enlarge the section kicker at the top of every Analysis card */
+.analysis-page .analysis-panel-head .analysis-section-kicker {
+  font-size: 16px !important;
+}
+
+/* ============================================================
+   SKILLCOMPASS CANONICAL THEME — ANALYSIS PAGE
+   Step 4 migration onto the global GitHub Workspace visual system.
+   Scoped to .analysis-page only.
+   ============================================================ */
+
+.analysis-page {
+  --analysis-bg: var(--sc-bg);
+  --analysis-panel: var(--sc-card);
+  --analysis-panel-soft: var(--sc-card-soft);
+  --analysis-line: var(--sc-line);
+  --analysis-text: var(--sc-text);
+  --analysis-muted: var(--sc-copy);
+  --analysis-dim: var(--sc-copy);
+  --analysis-blue: var(--sc-blue);
+  --analysis-cyan: var(--sc-cyan);
+  --analysis-purple: var(--sc-purple);
+  --analysis-mint: var(--sc-mint);
+  --analysis-orange: var(--sc-amber);
+  --analysis-red: #ff7f9b;
+
+  background:
+    radial-gradient(circle at 12% 7%, rgba(47, 140, 255, .10), transparent 27%),
+    radial-gradient(circle at 88% 76%, rgba(139, 92, 246, .08), transparent 31%);
+}
+
+/* Canonical clay surfaces. */
+.analysis-page .analysis-metric,
+.analysis-page .analysis-panel,
+.analysis-page .analysis-state,
+.analysis-page .analysis-selected-skill,
+.analysis-page .analysis-methodology,
+.analysis-page .analysis-intelligence .analysis-table,
+.analysis-page .analysis-repository-card,
+.analysis-page .analysis-skeleton {
+  border-color: var(--sc-line);
+  background: var(--sc-card);
+  box-shadow: var(--sc-shadow-card);
+}
+
+.analysis-page .analysis-skill-row,
+.analysis-page .analysis-selected-meta span,
+.analysis-page .analysis-evidence-item,
+.analysis-page .analysis-coverage-row,
+.analysis-page .analysis-methodology-version,
+.analysis-page .analysis-tech-pill,
+.analysis-page .analysis-table-head,
+.analysis-page .analysis-table-row {
+  border-color: var(--sc-line);
+}
+
+.analysis-page .analysis-skill-row {
+  background: var(--sc-card-soft);
+}
+
+.analysis-page .analysis-selected-skill,
+.analysis-page .analysis-repository-card,
+.analysis-page .analysis-coverage-row,
+.analysis-page .analysis-tech-pill {
+  background: var(--sc-card-soft);
+}
+
+/* Canonical bright text system — no grey text. */
+.analysis-page,
+.analysis-page .analysis-hero-copy p,
+.analysis-page .analysis-hero-meta small,
+.analysis-page .analysis-metric small,
+.analysis-page .analysis-panel p,
+.analysis-page .analysis-skill-copy small,
+.analysis-page .analysis-score,
+.analysis-page .analysis-donut-hole span,
+.analysis-page .analysis-distribution-row span,
+.analysis-page .analysis-table-head,
+.analysis-page .analysis-table-row,
+.analysis-page .analysis-selected-head p,
+.analysis-page .analysis-selected-meta span,
+.analysis-page .analysis-evidence-item small,
+.analysis-page .analysis-flow-step strong,
+.analysis-page .analysis-methodology-version span,
+.analysis-page .analysis-repository-head small,
+.analysis-page .analysis-commit,
+.analysis-page .analysis-language-mini > span,
+.analysis-page .analysis-coverage-row span,
+.analysis-page .analysis-run-footnote,
+.analysis-page .analysis-empty-inline,
+.analysis-page .analysis-primary-action,
+.analysis-page .analysis-secondary-action {
+  color: var(--sc-copy-strong) !important;
+}
+
+/* Keep the hierarchy colorful rather than grey. */
+.analysis-page .analysis-section-kicker,
+.analysis-page .analysis-hero-meta span {
+  color: var(--sc-blue) !important;
+}
+
+.analysis-page .analysis-hero-copy h1 em {
+  background: linear-gradient(90deg, var(--sc-white) 0%, var(--sc-blue) 48%, var(--sc-purple) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.analysis-page .analysis-selected-score strong {
+  color: var(--sc-blue) !important;
+}
+
+.analysis-page .analysis-table-skill strong,
+.analysis-page .analysis-table-row > span:nth-child(2),
+.analysis-page .analysis-table-row > span:nth-child(3),
+.analysis-page .analysis-table-row > span:nth-child(4),
+.analysis-page .analysis-table-row > span:nth-child(5) {
+  color: var(--sc-copy-strong);
+}
+
+/* Preserve the existing semantic accent colors. */
+.analysis-page .level-expert { color: var(--sc-mint) !important; }
+.analysis-page .level-advanced { color: var(--sc-blue) !important; }
+.analysis-page .level-intermediate { color: var(--sc-amber) !important; }
+.analysis-page .level-beginner { color: #ff8bb5 !important; }
+
+.analysis-page .analysis-skill-copy strong {
+  color: var(--sc-cyan) !important;
+}
+
+.analysis-page .analysis-evidence-item > span {
+  color: var(--sc-mint) !important;
+}
+
+.analysis-page .analysis-view-all,
+.analysis-page .analysis-methodology-copy h2,
+.analysis-page .analysis-panel h2,
+.analysis-page .analysis-methodology-copy p {
+  color: var(--sc-copy-strong) !important;
+}
+
+.analysis-page .analysis-hero-refresh,
+.analysis-page .analysis-primary-action {
+  color: var(--sc-white) !important;
+  background: linear-gradient(145deg, #347fdc, #173f91);
+  border-color: var(--sc-line);
+  box-shadow: var(--sc-shadow-button);
+}
+
+.analysis-page .analysis-secondary-action {
+  color: var(--sc-copy-strong) !important;
+  background: var(--sc-card-soft);
+  border-color: var(--sc-line);
+}
+
+/* ============================================================
+   MINIMUM ANALYSIS TEXT SIZE — 12px
+   Small labels, metadata and icon text are raised to 12px.
+   Headings and larger text keep their existing larger sizes.
+   ============================================================ */
+
+.analysis-page .analysis-hero-meta small,
+.analysis-page .analysis-metric small,
+.analysis-page .analysis-section-kicker,
+.analysis-page .analysis-skill-copy small,
+.analysis-page .analysis-level,
+.analysis-page .analysis-view-all,
+.analysis-page .analysis-donut-hole span,
+.analysis-page .analysis-distribution-row span,
+.analysis-page .analysis-table-head,
+.analysis-page .analysis-table-row,
+.analysis-page .analysis-table-skill strong,
+.analysis-page .analysis-table-skill i,
+.analysis-page .analysis-selected-head p,
+.analysis-page .analysis-selected-meta span,
+.analysis-page .analysis-evidence-item strong,
+.analysis-page .analysis-evidence-item small,
+.analysis-page .analysis-flow-step strong,
+.analysis-page .analysis-methodology-version span,
+.analysis-page .analysis-methodology-version strong,
+.analysis-page .analysis-tech-pill,
+.analysis-page .analysis-tech-pill i,
+.analysis-page .analysis-coverage-row span,
+.analysis-page .analysis-coverage-row strong,
+.analysis-page .analysis-run-footnote,
+.analysis-page .analysis-repository-head strong,
+.analysis-page .analysis-repository-head small,
+.analysis-page .analysis-commit,
+.analysis-page .analysis-commit code,
+.analysis-page .analysis-language-mini > span,
+.analysis-page .analysis-language-mini b,
+.analysis-page .analysis-small-tech,
+.analysis-page .analysis-primary-action,
+.analysis-page .analysis-secondary-action,
+.analysis-page .analysis-empty-inline {
+  font-size: 15px !important;
+}
+
+/* The visible Analysis hero always stays comfortably above the minimum. */
+.analysis-page .analysis-eyebrow { font-size: 15px !important; }
+.analysis-page .analysis-hero-copy p { font-size: 15px !important; }
+.analysis-page .analysis-hero-copy h1 { font-size: 43px !important; }
+
+/* Card labels and supporting copy should never collapse below 12px. */
+.analysis-page .analysis-panel-head h2 { font-size: 24px !important; }
+.analysis-page .analysis-panel-head p { font-size: 15px !important; }
+.analysis-page .analysis-distribution-row strong { font-size: 16px !important; }
+.analysis-page .analysis-selected-head h3 { font-size: 21px !important; }
+.analysis-page .analysis-selected-score strong { font-size: 26px !important; }
+.analysis-page .analysis-methodology-copy h2 { font-size: 24px !important; }
+.analysis-page .analysis-state h2 { font-size: 22px !important; }
+
+/* Small icon labels are still readable. */
+.analysis-page .analysis-skill-mark,
+.analysis-page .analysis-tech-pill i,
+.analysis-page .analysis-table-skill i,
+.analysis-page .analysis-repository-icon {
+  font-size: 15px !important;
+}
+
+/* Canonical responsive minimum remains 12px. */
+@media (max-width: 720px) {
+  .analysis-page .analysis-hero-copy p,
+  .analysis-page .analysis-panel-head p {
+    font-size: 15px !important;
+  }
+}
+
+/* Do not introduce grey text through disabled/placeholder states. */
+.analysis-page button:disabled,
+.analysis-page input::placeholder {
+  color: var(--sc-copy-strong) !important;
+  opacity: .86;
+}
+
+
+/* ============================================================
+   SKILLCOMPASS GLOBAL READABILITY PASS — ANALYSIS PAGE
+   Typography/color only. No layout or logic changes.
+   ============================================================ */
+.analysis-page .analysis-hero-meta small,
+.analysis-page .analysis-metric small,
+.analysis-page .analysis-skill-copy small,
+.analysis-page .analysis-donut-hole span,
+.analysis-page .analysis-distribution-row span,
+.analysis-page .analysis-table-row,
+.analysis-page .analysis-selected-head p,
+.analysis-page .analysis-selected-meta span,
+.analysis-page .analysis-evidence-item small,
+.analysis-page .analysis-flow-step strong,
+.analysis-page .analysis-methodology-version span,
+.analysis-page .analysis-repository-head small,
+.analysis-page .analysis-commit,
+.analysis-page .analysis-language-mini > span,
+.analysis-page .analysis-coverage-row span,
+.analysis-page .analysis-run-footnote,
+.analysis-page .analysis-empty-inline {
+  font-size: 15px !important;
+  color: #d8edff !important;
+}
+
+.analysis-page .analysis-panel-head .analysis-section-kicker,
+.analysis-page .analysis-intelligence .analysis-table-head {
+  font-size: 15px !important;
+  color: #64d9ff !important;
+}
+
+.analysis-page .analysis-panel-head h2 {
+  color: #f4f9ff !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-skill-copy strong,
+.analysis-page .analysis-intelligence .analysis-table-skill strong {
+  color: #f4f9ff !important;
+}
+
+.analysis-page .analysis-skill-profile .analysis-score,
+.analysis-page .analysis-skill-profile .analysis-level,
+.analysis-page .analysis-intelligence .analysis-table-row em {
+  color: #63d9ff !important;
+}

@@ -1,0 +1,377 @@
+/* ============================================================
+   SkillCompass — responsive sidebar overlap fix
+   Append this block at the VERY END of styles-background-live.css.
+   ============================================================ */
+
+@media (max-width: 900px) {
+  /* The late desktop "reference sidebar" rules were overriding the
+     earlier mobile grid rule. Force a true single-column layout. */
+  .app-shell {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+    border-radius: 26px;
+    padding: 18px 14px 20px;
+  }
+
+  .sidebar-header {
+    padding: 0 8px;
+  }
+
+  .nav-stack {
+    width: 100%;
+    margin: 24px 0 0;
+    gap: 4px;
+  }
+
+  .nav-item {
+    width: 100%;
+    min-height: 48px;
+    height: 48px;
+    padding: 0 14px;
+    border-radius: 16px;
+  }
+
+  .sidebar-divider {
+    margin: 22px 8px 12px;
+  }
+
+  .bottom-nav {
+    margin-top: 0;
+  }
+
+  .build-card {
+    width: 100%;
+    height: auto;
+    min-height: 170px;
+    margin-top: 16px;
+  }
+
+  /* Never let the page content become a second, ultra-narrow grid
+     column that can visually sit behind the sidebar. */
+  .main-area {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    margin-top: 14px;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    padding: 8px;
+  }
+
+  .sidebar {
+    border-radius: 22px;
+    padding: 14px 10px 16px;
+  }
+
+  .nav-item {
+    min-height: 46px;
+    height: 46px;
+    padding: 0 12px;
+  }
+
+  .main-area {
+    margin-top: 10px;
+  }
+
+  /* Decorative ambient shapes are designed for desktop coordinates.
+     Hide them on phone widths so they cannot leak across the layout. */
+  .ambient-shape,
+  .ambient-orbital,
+  .ambient-particle {
+    display: none;
+  }
+}
+
+/* ============================================================
+   FINAL RESPONSIVE SIDEBAR FIX
+   Put this at the END of styles-background-live.css.
+   ============================================================ */
+
+/* Remove any legacy BrandMark box that may still be styled globally. */
+.sidebar .brand-mark {
+  display: none !important;
+}
+
+.sidebar .brand-lockup {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar .brand-copy {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    display: block !important;
+    width: 100%;
+    min-width: 0;
+    padding: 10px !important;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 10;
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 16px !important;
+
+    overflow: visible !important;
+    border-radius: 24px !important;
+  }
+
+  .sidebar-header {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 2px !important;
+  }
+
+  .brand-lockup,
+  .brand-copy {
+    display: block !important;
+  }
+
+  .brand-name {
+    display: block;
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+  }
+
+  .brand-tagline {
+    display: block;
+    margin-top: 4px !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .nav-stack {
+    width: 100% !important;
+    margin: 18px 0 0 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch;
+    gap: 6px !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 2px 1px 8px !important;
+
+    scrollbar-width: none;
+  }
+
+  .nav-stack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: max-content !important;
+    min-height: 44px !important;
+    height: 44px !important;
+
+    padding: 0 12px !important;
+    border-radius: 14px !important;
+    gap: 8px !important;
+
+    white-space: nowrap;
+  }
+
+  .nav-item .nav-icon,
+  .nav-item .nav-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .nav-item span:last-child {
+    font-size: 11px !important;
+  }
+
+  .sidebar-divider {
+    margin: 12px 2px 8px !important;
+  }
+
+  .bottom-nav {
+    margin-top: 0 !important;
+  }
+
+  .bottom-nav .nav-item {
+    min-height: 40px !important;
+    height: 40px !important;
+  }
+
+  .build-card {
+    display: none !important;
+  }
+
+  .sidebar-notice {
+    margin-top: 10px;
+  }
+
+  .main-area {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-top: 12px !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    padding: 6px !important;
+  }
+
+  .sidebar {
+    padding: 14px !important;
+    border-radius: 20px !important;
+  }
+
+  .brand-name {
+    font-size: 18px !important;
+  }
+
+  .brand-tagline {
+    font-size: 9px !important;
+  }
+
+  .nav-stack {
+    margin-top: 14px !important;
+  }
+}
+
+/* ============================================================
+   RESTORE SKILLCOMPASS LOGO WITHOUT TOUCHING LEGACY BRAND-MARK CSS
+   Put this at the very bottom of styles-background-live.css.
+   ============================================================ */
+
+.sidebar .sidebar-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+
+  background: linear-gradient(145deg, #5d97f0, #203e83);
+  border: 1px solid rgba(255,255,255,.05);
+
+  box-shadow:
+    0 10px 20px rgba(3,7,17,.42),
+    0 3px 7px rgba(0,0,0,.28),
+    inset 1px 2px 2px rgba(255,255,255,.11),
+    inset -2px -3px 6px rgba(0,0,0,.46);
+
+  filter:
+    drop-shadow(0 5px 4px rgba(0,0,0,.56))
+    drop-shadow(0 1px 1px rgba(104,164,255,.18));
+}
+
+.sidebar .sidebar-logo svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar .brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sidebar .brand-copy {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep the restored logo visible on compact/mobile layouts. */
+@media (max-width: 900px) {
+  .sidebar .sidebar-logo {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .sidebar .sidebar-logo svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .sidebar .brand-lockup {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .sidebar .brand-name {
+    font-size: 18px !important;
+  }
+
+  .sidebar .brand-tagline {
+    font-size: 9px !important;
+  }
+}

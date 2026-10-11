@@ -1,0 +1,355 @@
+/* ============================================================
+   SKILLCOMPASS GLOBAL DESIGN THEME
+   Based on the established Skills page visual language.
+   ============================================================ */
+
+:root {
+  /* ---------- Background ---------- */
+  --sc-bg: #050d20;
+
+  /* ---------- Surfaces ---------- */
+  --sc-card:
+    linear-gradient(
+      145deg,
+      rgba(20, 50, 96, 0.96),
+      rgba(8, 27, 58, 0.985)
+    );
+
+  --sc-card-soft:
+    linear-gradient(
+      145deg,
+      rgba(24, 60, 112, 0.86),
+      rgba(10, 31, 64, 0.94)
+    );
+
+  /* ---------- Borders ---------- */
+  --sc-line: rgba(112, 176, 255, 0.18);
+
+  /* ---------- Brand accents ---------- */
+  --sc-blue: #63b7ff;
+  --sc-cyan: #62e8ff;
+  --sc-purple: #c39aff;
+  --sc-mint: #61e6b4;
+  --sc-amber: #ffd178;
+
+  /* ---------- Typography ---------- */
+  --sc-text: #f6f9ff;
+  --sc-copy: #c6ddf5;
+  --sc-muted: #8fa8c8;
+  --sc-dim: #7189ad;
+
+  /* ---------- Common shape ---------- */
+  --sc-radius-sm: 10px;
+  --sc-radius-md: 15px;
+  --sc-radius-lg: 21px;
+  --sc-radius-xl: 26px;
+
+  /* ---------- Common shadows ---------- */
+  --sc-shadow-card:
+    0 19px 34px rgba(0, 7, 20, 0.42),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.065),
+    inset -5px -7px 12px rgba(0, 0, 0, 0.34);
+
+  --sc-shadow-button:
+    0 10px 20px rgba(17, 83, 190, 0.25),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.17);
+
+  /* ---------- Typography scale ---------- */
+  --sc-text-xs: 10px;
+  --sc-text-sm: 12px;
+  --sc-text-md: 14px;
+  --sc-text-lg: 18px;
+  --sc-text-xl: 24px;
+  --sc-heading: 44px;
+}
+
+/* ============================================================
+   GLOBAL PAGE BACKGROUND
+   ============================================================ */
+
+html,
+body {
+  background: var(--sc-bg);
+}
+
+/* ============================================================
+   AMBIENT BACKGROUND
+   ============================================================ */
+
+.sc-page-background {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.sc-page-background::before,
+.sc-page-background::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+.sc-page-background::before {
+  width: 360px;
+  height: 360px;
+  top: -150px;
+  right: 4%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(68, 150, 255, 0.18),
+      transparent 68%
+    );
+}
+
+.sc-page-background::after {
+  width: 300px;
+  height: 300px;
+  left: -130px;
+  bottom: 4%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(126, 88, 255, 0.14),
+      transparent 70%
+    );
+}
+
+/* ============================================================
+   SHARED CLAY CARD
+   ============================================================ */
+
+.sc-card {
+  min-width: 0;
+  border-radius: var(--sc-radius-lg);
+  border: 1px solid var(--sc-line);
+  background: var(--sc-card);
+  box-shadow: var(--sc-shadow-card);
+}
+
+/* ============================================================
+   SHARED SOFT CARD
+   ============================================================ */
+
+.sc-card-soft {
+  min-width: 0;
+  border-radius: var(--sc-radius-lg);
+  border: 1px solid rgba(112, 176, 255, 0.14);
+  background: var(--sc-card-soft);
+  box-shadow:
+    0 16px 30px rgba(0, 7, 20, 0.34),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.045),
+    inset -4px -6px 10px rgba(0, 0, 0, 0.28);
+}
+
+/* ============================================================
+   SHARED PRIMARY BUTTON
+   ============================================================ */
+
+.sc-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 42px;
+  padding: 0 14px;
+
+  border: 1px solid rgba(99, 177, 255, 0.30);
+  border-radius: var(--sc-radius-md);
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2d90ff,
+      #1956d5
+    );
+
+  box-shadow: var(--sc-shadow-button);
+
+  font: inherit;
+  font-size: var(--sc-text-sm);
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease;
+}
+
+.sc-primary-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+}
+
+.sc-primary-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ============================================================
+   SHARED SECONDARY BUTTON
+   ============================================================ */
+
+.sc-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 42px;
+  padding: 0 14px;
+
+  border: 1px solid rgba(87, 148, 224, 0.14);
+  border-radius: var(--sc-radius-md);
+
+  color: #cfe1f7;
+
+  background:
+    linear-gradient(
+      145deg,
+      #173663,
+      #0d2347
+    );
+
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.035),
+    inset -2px -3px 5px rgba(0, 0, 0, 0.22);
+
+  font: inherit;
+  font-size: var(--sc-text-sm);
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.sc-secondary-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(77, 158, 248, 0.28);
+}
+
+/* ============================================================
+   SHARED INPUT
+   ============================================================ */
+
+.sc-input {
+  width: 100%;
+  min-height: 44px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(103, 163, 236, 0.18);
+  border-radius: var(--sc-radius-md);
+
+  outline: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      #122b55,
+      #0a2143
+    );
+
+  color: #eaf2ff;
+
+  padding: 0 13px;
+
+  font: inherit;
+  font-size: var(--sc-text-sm);
+
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.28),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.03);
+}
+
+.sc-input::placeholder {
+  color: #7894b9;
+}
+
+.sc-input:focus {
+  border-color: rgba(99, 177, 255, 0.30);
+}
+
+/* ============================================================
+   SHARED EYEBROW
+   ============================================================ */
+
+.sc-eyebrow {
+  display: inline-block;
+
+  color: #73b5ff;
+
+  font-size: var(--sc-text-xs);
+  font-weight: 850;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SHARED SECTION HEADING
+   ============================================================ */
+
+.sc-section-title {
+  margin: 0;
+
+  color: var(--sc-text);
+
+  font-size: var(--sc-text-xl);
+  line-height: 1.25;
+
+  font-weight: 800;
+}
+
+.sc-section-copy {
+  margin: 6px 0 0;
+
+  color: var(--sc-copy);
+
+  font-size: var(--sc-text-sm);
+  line-height: 1.65;
+}
+
+/* ============================================================
+   SHARED CHIP
+   ============================================================ */
+
+.sc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  min-height: 32px;
+  padding: 0 10px;
+
+  border: 1px solid rgba(93, 157, 228, 0.17);
+  border-radius: 11px;
+
+  color: #dceafa;
+
+  background: rgba(25, 67, 123, 0.35);
+
+  font-size: var(--sc-text-xs);
+  font-weight: 700;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-primary-button,
+  .sc-secondary-button {
+    transition: none;
+  }
+}
